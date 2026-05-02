@@ -1,7 +1,3 @@
-Got it 😄 You want the same README content, but **without the triple backticks/code fences**, so you can paste it more easily.
-
-Use this directly in your `README.md`:
-
 # AI Caption Generator 🚀
 
 An AI-powered image captioning system for real and anime images, designed for dataset creation and fine-tuning workflows.
@@ -32,6 +28,7 @@ This project combines:
 AI-Caption-Generator/
 
 ├── spring-backend/
+
 └── ai-server/
 
 ---
