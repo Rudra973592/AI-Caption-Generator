@@ -1,4 +1,4 @@
-# AI Caption Generator 🚀
+# AI Caption Generator 
 
 An AI-powered image captioning system for real and anime images, designed for dataset creation and fine-tuning workflows.
 
