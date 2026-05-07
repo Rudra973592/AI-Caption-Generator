@@ -14,22 +14,22 @@ This project combines:
 
 # Features
 
-✅ Real image captioning
-✅ Anime image tagging
-✅ Batch image upload
-✅ Individual caption export for fine-tuning
-✅ Database storage
-✅ REST API architecture
+➤ Real image captioning <br>
+➤ Anime image tagging <br>
+➤ Batch image upload <br>
+➤ Individual caption export for fine-tuning <br>
+➤ Database storage <br>
+➤ REST API architecture <br>
 
 ---
 
 # Project Structure
 
+```text
 AI-Caption-Generator/
-
 ├── spring-backend/
-
 └── ai-server/
+```
 
 ---
 
@@ -60,25 +60,35 @@ AI-Caption-Generator/
 
 # Installation
 
-## 1. Clone repository
+## 1. Clone Repository
 
-git clone [https://github.com/Rudra973592/AI-Caption-Generator.git](https://github.com/Rudra973592/AI-Caption-Generator.git)
-
+```bash
+git clone https://github.com/Rudra973592/AI-Caption-Generator.git
 cd AI-Caption-Generator
+```
 
 ---
 
-## 2. Start MySQL
+## 2. Setup MySQL
 
 Create database:
 
+```sql
 CREATE DATABASE caption_db;
+```
 
-Update:
+Then open:
 
+```text
 spring-backend/src/main/resources/application.properties
+```
 
-with your MySQL username and password.
+Enter your username and password:
+
+```properties
+spring.datasource.username=YOUR_MYSQL_USERNAME
+spring.datasource.password=YOUR_MYSQL_PASSWORD
+```
 
 ---
 
@@ -86,19 +96,35 @@ with your MySQL username and password.
 
 Open terminal:
 
+```bash
 cd ai-server
+```
 
 Install dependencies:
 
-pip install fastapi uvicorn transformers torch pillow onnxruntime huggingface_hub
+```bash
+pip install fastapi uvicorn torch pillow onnxruntime huggingface_hub
+pip uninstall transformers -y
+pip install transformers==4.46.3 accelerate sentencepiece -U
+```
 
-Run:
+Important:
 
+```text
+Florence-2 requires Transformers version 4.46.3 or newer.
+```
+
+Run server:
+
+```bash
 python -m uvicorn ai_server:app --reload
+```
 
 AI server runs at:
 
-[http://127.0.0.1:8000](http://127.0.0.1:8000)
+```text
+http://127.0.0.1:8000
+```
 
 ---
 
@@ -106,15 +132,32 @@ AI server runs at:
 
 Open second terminal:
 
+```bash
 cd spring-backend
+```
 
-Run (Windows):
+Run:
 
+```bash
 gradlew bootRun
+```
 
 Backend runs at:
 
-[http://localhost:8080](http://localhost:8080)
+```text
+http://localhost:8080
+```
+
+---
+
+## IntelliJ Users
+
+Important:
+
+```text
+Open ONLY the "spring-backend" folder as a Gradle project.
+Do NOT open the root repository folder.
+```
 
 ---
 
@@ -122,7 +165,9 @@ Backend runs at:
 
 Open browser:
 
+```text
 http://localhost:8080/index.html
+```
 
 Then:
 
@@ -138,23 +183,31 @@ Then:
 
 # API Endpoints
 
-## Generate captions
+## Generate Captions
 
+```http
 POST /upload-multiple
+```
 
-## View stored captions
+## View Stored Captions
 
+```http
 GET /captions
+```
 
 Example:
 
-[http://localhost:8080/captions](http://localhost:8080/captions)
+```text
+http://localhost:8080/captions
+```
 
 ---
 
 # Architecture
 
+```text
 User → Frontend → Spring Boot → FastAPI → AI Models → MySQL
+```
 
 ---
 
@@ -169,5 +222,6 @@ User → Frontend → Spring Boot → FastAPI → AI Models → MySQL
 
 # Author
 
-Rudra Jani
+**Rudra Jani**
 
+---
